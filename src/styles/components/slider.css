@@ -1,0 +1,162 @@
+/* purgecss start ignore */
+
+/* Slider */
+.slick-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  box-sizing: border-box;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  flex: 1;
+  display: flex;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  flex: 1;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Gallery--home .slick-track {
+  display: flex !important;
+}
+
+.Gallery--home .slick-slider,
+.Gallery--modal .slick-slider {
+  @screen sm-only {
+    flex-wrap: wrap;
+  }
+}
+
+.Gallery--home .slick-list {
+  @apply sm-only:h-full;
+}
+
+.Gallery--home .slick-list,
+.Gallery--modal .slick-list {
+  @screen sm-only {
+    min-width: 100%;
+  }
+}
+
+.Gallery--home .slick-list {
+  z-index: 1;
+}
+
+.Gallery--modal .slick-list {
+  z-index: 1;
+}
+
+.Gallery--home .slick-list,
+.Gallery--home .slick-track,
+.Gallery--home .slick-slide {
+  pointer-events: none;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+
+  content: '';
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  padding-right: 1px;
+  position: relative;
+  right: -1px;
+  min-height: 1px;
+  ouline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+.slick-slide > div {
+  display: flex;
+  flex: 1;
+}
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: flex;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+/* .slick-vertical .slick-slide {
+  display: block;
+
+  height: auto;
+
+  border: 1px solid transparent;
+} */
+.slick-arrow.slick-hidden {
+  display: none;
+}
+/* purgecss end ignore */

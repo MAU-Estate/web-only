@@ -1,0 +1,12 @@
+.projectFilter {
+  @apply flex;
+}
+
+.projectFilter_column:not(:first-child) {
+  @apply md:ml-[5%];
+  @apply lg:ml-20;
+}
+
+.projectFilter_column div:first-child {
+  @apply mb-8;
+}

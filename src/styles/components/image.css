@@ -1,0 +1,5 @@
+/* purgecss start ignore */
+.gatsby-image-wrapper {
+  @apply flex-1;
+}
+/* purgecss end ignore */

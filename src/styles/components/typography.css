@@ -1,0 +1,54 @@
+/* purgecss start ignore */
+em,
+.richText em {
+  font-family: var(--font-primary--italic);
+  font-style: normal;
+}
+
+.work .f-5,
+.exhibitions .f-5,
+.fellowships .f-5,
+.contact .f-5,
+.cv .f-5 {
+  @media (min-width: 550px) and (max-width: 849px) {
+    font-size: 105px;
+    line-height: 73px;
+    letter-spacing: -7.5px;
+    bottom: -0em;
+    margin-top: -0em;
+  }
+  @media (min-width: 850px) and (max-width: 999px) {
+    font-size: 148px;
+    line-height: 105px;
+    letter-spacing: -11px;
+    bottom: -0.01em;
+    margin-top: -0.01em;
+  }
+}
+
+.press .f-5 {
+  @media (min-width: 550px) and (max-width: 849px) {
+    font-size: 78px;
+    line-height: 69px;
+    letter-spacing: -4.5px;
+    margin-left: -8px;
+  }
+  @media (min-width: 850px) and (max-width: 999px) {
+    font-size: 111px;
+    line-height: 104px;
+    letter-spacing: -6px;
+    margin-left: -12px;
+  }
+  @media (min-width: 1000px) and (max-width: 1400px) {
+    font-size: 148px;
+    line-height: 103px;
+    letter-spacing: -11px;
+    margin-left: -16px;
+    bottom: -0.05em;
+    margin-top: -0.1em;
+  }
+  @media (min-width: 1200px) {
+    margin-left: -18px;
+  }
+}
+/* purgecss end ignore */

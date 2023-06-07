@@ -1,0 +1,16 @@
+/* purgecss start ignore */
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+.ReactModal__Content {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border: none !important;
+}
+/* purgecss end ignore */

@@ -1,0 +1,6 @@
+/* purgecss start ignore */
+.theme--light #logo {
+  @apply transition-colors;
+  @apply text-black;
+}
+/* purgecss end ignore */

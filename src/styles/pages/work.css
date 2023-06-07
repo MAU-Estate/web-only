@@ -1,0 +1,19 @@
+/* purgecss start ignore */
+.work {
+  & .work-filter .headroom {
+    top: 68px !important;
+  }
+  & .work-filter .headroom--unpinned {
+    transform: translate3d(0px, calc(-100% - 68px), 0px) !important;
+  }
+  @screen md {
+    & .work-filter .headroom {
+      top: 0px !important;
+      padding-left: 41px !important;
+    }
+    & .work-filter .headroom--unfixed {
+      padding-left: 0px !important;
+    }
+  }
+}
+/* purgecss end ignore */

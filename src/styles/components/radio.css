@@ -1,0 +1,5 @@
+/* purgecss start ignore */
+.radio input[type='radio']:not(:checked) + label {
+  @apply text-grey-b;
+}
+/* purgecss end ignore */

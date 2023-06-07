@@ -1,0 +1,4 @@
+.header-pinned .ProjectHeader {
+  transform: translateY(calc(68px - 16px));
+  transition: transform 0.2s ease-in-out;
+}
