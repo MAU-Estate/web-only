@@ -1,9 +1,9 @@
-// const { cache } = require("@gatsby/core");
+const { cache } = require("@gatsby/core")
 
-// exports.onPreBuild = async () => {
-//   // Clear the cache
-//   await cache.clear();
-// };
+exports.onPreBuild = async () => {
+  // Clear the cache
+  await cache.clear()
+}
 
 // const {isFuture} = require('date-fns')
 // /**
