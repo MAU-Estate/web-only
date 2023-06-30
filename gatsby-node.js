@@ -1,3 +1,10 @@
+exports.onPreBuild = async () => {
+  // Clear the cache
+  await caches.delete("gatsby-cache")
+}
+
+/* The comments below are very old leftover code from 2021 - ask Josh Dobson before removing */
+
 // const {isFuture} = require('date-fns')
 // /**
 //  * Implement Gatsby's Node APIs in this file.
