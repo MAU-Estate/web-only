@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "@joshuarule",
   "scripts": {
+    "preinstall": "gatsby clean",
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
     "dev": "npm run clean-cache && gatsby develop -H 0.0.0.0 -p 8000",
