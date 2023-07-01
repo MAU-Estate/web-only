@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "author": "@joshuarule",
   "scripts": {
+    "preinstall": "gatsby clean",
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
     "dev": "npm run clean-cache && gatsby develop -H 0.0.0.0 -p 8000",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "preinstall": "gatsby clean"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
