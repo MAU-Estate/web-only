@@ -6,6 +6,7 @@
   "scripts": {
     "preinstall": "gatsby clean",
     "build": "gatsby build",
+    "build-prod": "npm run preinstall && npm run build",
     "clean-cache": "gatsby clean",
     "dev": "npm run clean-cache && gatsby develop -H 0.0.0.0 -p 8000",
     "lint": "eslint .",
