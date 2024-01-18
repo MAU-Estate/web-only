@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
+import React, { useState } from "react"
+import { useCurrentBreakpoint } from "../hooks/useCurrentBreakpoint"
 
-import Icon from './Icon'
+import Icon from "./Icon"
 
 export default function Footer() {
   const [mailchimpState, setMailchimpState] = useState()
-  const [mailchimpError, setMailchimpError] = useState('')
+  const [mailchimpError, setMailchimpError] = useState("")
 
   const { atLarge } = useCurrentBreakpoint()
 
-  const handleMailingListSubmit = async e => {
+  const handleMailingListSubmit = async (e) => {
     e.preventDefault()
 
-    const email = document.getElementById('email')
-    mailchimpState && setMailchimpState('')
-    fetch('/.netlify/functions/addEmailToMailchimp', {
-      method: 'post',
+    const email = document.getElementById("email")
+    mailchimpState && setMailchimpState("")
+    fetch("/.netlify/functions/addEmailToMailchimp", {
+      method: "post",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: email.value,
     })
@@ -26,15 +26,15 @@ export default function Footer() {
       })
       .then(function (data) {
         if (data.status === 400) {
-          setMailchimpState('ERROR')
+          setMailchimpState("ERROR")
           setMailchimpError(
-            data.title === 'Member Exists'
+            data.title === "Member Exists"
               ? `${email.value} is already signed up`
               : data.detail
           )
         } else {
-          setMailchimpState('SUCCESS')
-          email.value = ''
+          setMailchimpState("SUCCESS")
+          email.value = ""
         }
       })
   }
@@ -59,7 +59,7 @@ export default function Footer() {
                     name="email"
                     type="email"
                     className={`bg-transparent f-4 outline-none text-grey-c ${
-                      mailchimpState === 'SUCCESS' ? 'opacity-0' : ''
+                      mailchimpState === "SUCCESS" ? "opacity-0" : ""
                     }`}
                     placeholder="ENTER YOUR EMAIL ADDRESS"
                     required
@@ -70,13 +70,13 @@ export default function Footer() {
                   >
                     <Icon name="arrowSignUp" className="h-full" />
                   </button>
-                  {mailchimpState === 'SUCCESS' && (
+                  {mailchimpState === "SUCCESS" && (
                     <div className="absolute left-0 bottom-0 top-0 right-0 flex items-center">
                       <p className="f-4 uppercase">Thank you.</p>
                     </div>
                   )}
                 </label>
-                {mailchimpState === 'ERROR' && (
+                {mailchimpState === "ERROR" && (
                   <div className="mt-4">
                     <p className="f-4 uppercase">{mailchimpError}</p>
                   </div>
@@ -89,12 +89,12 @@ export default function Footer() {
           <div className="sm-only:order-1 ">
             <button
               className="flex f-2 hover:underline"
-              style={{ textDecorationThickness: '.5px' }}
+              style={{ textDecorationThickness: ".5px" }}
               onClick={() => {
                 window.scrollTo({
                   top: 0,
                   left: 0,
-                  behavior: 'smooth',
+                  behavior: "smooth",
                 })
               }}
             >
@@ -112,30 +112,34 @@ export default function Footer() {
   )
 }
 
-const renderFooterLinks = () => (
-  <>
-    <div className="mb-3 lg:mb-0">
-      <a
-        className="block f-2 hover:underline"
-        href="mailto:estate@maryannunger.com"
-        style={{ textDecorationThickness: '.5px' }}
-      >
-        estate@maryannunger.com
-      </a>
-    </div>
-    <div className="mb-12 lg:mb-0">
-      <a
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-        className="block f-2 hover:underline"
-        href="https://instagram.com/maryannungerestate"
-        style={{ textDecorationThickness: '.5px' }}
-      >
-        Join us on Instagram
-      </a>
-    </div>
-    <div className="mb-24 lg:mb-0">
-      <div className="f-2">© 2021 Mary Ann Unger Estate</div>
-    </div>
-  </>
-)
+const renderFooterLinks = () => {
+  const currentDate = new Date()
+  let currentYear = currentDate.getFullYear()
+  return (
+    <>
+      <div className="mb-3 lg:mb-0">
+        <a
+          className="block f-2 hover:underline"
+          href="mailto:estate@maryannunger.com"
+          style={{ textDecorationThickness: ".5px" }}
+        >
+          estate@maryannunger.com
+        </a>
+      </div>
+      <div className="mb-12 lg:mb-0">
+        <a
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="block f-2 hover:underline"
+          href="https://instagram.com/maryannungerestate"
+          style={{ textDecorationThickness: ".5px" }}
+        >
+          Join us on Instagram
+        </a>
+      </div>
+      <div className="mb-24 lg:mb-0">
+        <div className="f-2">© {currentYear} Mary Ann Unger Estate</div>
+      </div>
+    </>
+  )
+}
